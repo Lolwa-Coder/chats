@@ -6,7 +6,7 @@ import MoreVertIcon from "@material-ui/icons/More";
 import SearchIcon from "@material-ui/icons/Search";
 import {useAuthState} from "react-firebase-hooks/auth";
 import * as EmailValidator from "email-validator";
-import Chat from "../components/chat";
+import Chat from "../components/Chat";
 import {useCollection} from "react-firebase-hooks/firestore";
 function Sidebar(){
     const [user]= useAuthState(auth);
