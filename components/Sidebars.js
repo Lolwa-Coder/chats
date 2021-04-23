@@ -59,7 +59,7 @@ function Sidebar(){
                     {/*chats */}
                     
                     {chatSnapshot?.docs.map((chat) => (
-                        <Chat key={chat.id} id ={chat.id} users={chat.data().users} />
+                        <Chat key={chat.id} id ={chat.id} users={chat?.data()?.users} />
                     ))}
             </Container>
 
@@ -71,7 +71,7 @@ const Container=styled.div`
 flex:0.45;
 border-right:1px solid whitesmoke;
 height:100vh;
-min-width:300px;
+width:40vw;
 max-width:350px;
 overflow-y:scroll;
 ::-webkit-scrollbar{
