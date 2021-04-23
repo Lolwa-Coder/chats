@@ -1,3 +1,5 @@
+
+
 import styled from "styled-components";
 import {Avatar, IconButton} from "@material-ui/core";
 import {useRef, useState} from "react";
@@ -31,17 +33,17 @@ function ChatScreen({chat,messages}){
    if(messagesSnapshot){
 return messagesSnapshot.docs.map((message)=>(
     <Messages
-       key={message.id}
-       user = {message.data().user}
+       key={message?.id}
+       user = {message?.data()?.user}
        message={{
-           ...message.data(),
-           timestamp:message.data().timestamp?.toDate().getTime(),
+           ...message?.data(),
+           timestamp:message?.data()?.timestamp?.toDate().getTime(),
        }} />
 ));
     }
     else{
         return JSON.parse(messages).map(message=>(
-            <Messages key={message.id} user = {message.user} message={message} />
+            <Messages key={message?.id} user = {message?.user} message={message} />
         ))
     }
      
@@ -60,7 +62,7 @@ return messagesSnapshot.docs.map((message)=>(
        setInput("");
        scrollToBottom();
    }
-   const recipient = recipientSnapshot?.docs?.[0].data();
+   const recipient = recipientSnapshot?.docs?.[0]?.data();
    const recipientEmail = getRecipientEmail(chat.users,user);
     return (
         <Container>
@@ -161,3 +163,4 @@ bottom:0px;
 z-index:10;
 background-color:white;
 `;
+
