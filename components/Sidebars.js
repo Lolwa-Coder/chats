@@ -82,7 +82,7 @@ overflow-y:scroll;
 const Header = styled.div`
 display:flex;
 position:sticky;
-
+z-index:1;
 top:0;
 justify-content:space-between;
 align-items:center;
